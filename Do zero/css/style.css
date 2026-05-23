@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #010105; /* Fundo ainda mais profundo */
+    position: relative;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Controles Mobile */
+#mobile-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Escondido no Desktop */
+    pointer-events: none; /* Deixa clicar através da div transparente */
+    z-index: 10;
+}
+
+#joystick-base {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 210, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+}
+
+#joystick-knob {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 210, 255, 0.4);
+    border: 2px solid #00d2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+}
+
+#boost-btn {
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 50, 100, 0.2);
+    border: 2px solid #ff3264;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 20px rgba(255, 50, 100, 0.5);
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+    transition: transform 0.1s;
+}
+
+#boost-btn:active {
+    transform: scale(0.9);
+    background: rgba(255, 50, 100, 0.5);
+}
+
+@media (pointer: coarse) {
+    #mobile-controls {
+        display: block;
+    }
+}
